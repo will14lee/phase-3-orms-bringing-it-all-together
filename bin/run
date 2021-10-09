@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby 
+
+require 'pry'
+require_relative '../config/environment'
+
+def reset_database
+  Dog.drop_table
+  Dog.create_table
+  Dog.create(name: "Lucinda", breed: "Yorkie")
+  Dog.create(name: "Ginger", breed: "Potato")
+end
+
+reset_database
+
+binding.pry
+"pls"
